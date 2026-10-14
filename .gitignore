@@ -1,0 +1,13 @@
+# Secrets -- NEVER commit your API key
+.env
+
+# Python's virtual environment and cache folders
+.venv/
+venv/
+__pycache__/
+
+# PyCharm's settings folder
+.idea/
+
+# Generated reports
+output/
