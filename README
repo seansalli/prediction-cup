@@ -1,0 +1,38 @@
+Prediction Cup Trading Bot
+I built these tools for Susquehanna's Predictions Cup 
+(running from October 1 to November 4 of 2026); it was
+a simulated prediction market trading competition on
+the 2026 United States midterm elections.
+
+Result: I finished 262nd of 1969 participants.
+
+The project had three parts:
+
+- An arbitrage bot which finds races where the democratic
+and republican sides are mispriced against each other
+and buys for a guaranteed profit
+
+- A Senate Monte Carlo model which estimates each Senate race's
+win probability and Senate control, then sizes bets where the model
+disagrees with the market
+
+- An election-night model which updates win probabilities live from partial
+vote counts
+
+THE ARBITRAGE BOT:
+-scanner.py downloads every open market and its best bid/ask, pairs the Democrat and Republican buy
+and reports which pairs have a guaranteed edge
+-depth.py checks both order books to see how many pairs can be filled before the edge is gone
+-recycler.py is the actual bot; it opens pairs when combined bids exceed 1 by at least 0.5 cents;
+and it closes existing pairs early when it can sell them back for a profit
+
+How to run (you need an API key from the competition):
+You need a second key with trade permissions as well! (in .env.example: SUSQ_TRADE_API_KEY should be added as well)
+scanner: finds arbitrage pairs
+senate_model: runs the Monte Carlo model
+recycler: run the live arbitrage bot
+election_night: live projections on election night
+
+
+
+
