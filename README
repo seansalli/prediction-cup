@@ -33,6 +33,9 @@ senate_model: runs the Monte Carlo model
 recycler: run the live arbitrage bot
 election_night: live projections on election night
 
-
+What I learned:
+- Correlated polling error is the main driver of uncertainty when looking at Senate control.
+- Fractional Kelly trades some expected return for a much lower chance of a big loss
+- Arbitrage based on last-trade price often disappears with real bid prices.
 
 
